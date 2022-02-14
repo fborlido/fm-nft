@@ -3,7 +3,7 @@
 $Softblue: hsl(215, 51%, 70%);
 $Cyan: hsl(178, 100%, 50%);
 $Verydarkbluebg: hsl(217, 54%, 11%);
-$Verydarkblue: hsl(216, 50%, 16%);
+$Verydarkblue1: hsl(216, 50%, 16%);
 $Verydarkblue: hsl(215, 32%, 27%);
 $White: hsl(0, 0%, 100%);
 
@@ -32,17 +32,18 @@ main {
   max-width: 23rem;
   padding: 1.25em;
   border-radius: 1em;
+  box-shadow: 0 0 30px 0 $Verydarkblue1;
 }
 
 .picture {
   position: relative;
-
+  
   .nft {
     width: 100%;
     display: block;
     border-radius: 0.8em;
   }
-
+  
   .eye {
     position: absolute;
     top: 50%;
@@ -50,8 +51,9 @@ main {
     transform: translate(-50%, -50%);
     opacity: 0;
     z-index: 100;
+    transition: all 300ms ease-in-out;
   }
-
+  
   &::after {
     content: "";
     position: absolute;
@@ -62,8 +64,9 @@ main {
     background-color: $Cyan;
     border-radius: 0.8em;
     opacity: 0;
+    transition: all 300ms ease-in-out;
   }
-
+  
   &:hover {
     .eye {
       opacity: 100;
